@@ -1,0 +1,246 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  clerkId       String?   @unique
+  fullName      String?
+  role          Role      @default(PLAYER)
+  phone         String?
+  dateOfBirth   DateTime?
+  position      String?
+  team          String?
+  profileImage  String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  videos        PlayerVideo[]  @relation("PlayerVideos")
+  uploadedVideos PlayerVideo[] @relation("UploadedVideos")
+  eventRegistrations EventRegistration[]
+  orders        Order[]
+  progress      PlayerProgress[]
+  notifications Notification[]
+  uploadedMedia MediaGallery[]
+}
+
+enum Role {
+  ADMIN
+  PLAYER
+  PARENT
+}
+
+model PlayerVideo {
+  id            String    @id @default(cuid())
+  playerId      String
+  player        User      @relation("PlayerVideos", fields: [playerId], references: [id], onDelete: Cascade)
+  title         String
+  description   String?
+  videoUrl      String
+  thumbnailUrl  String?
+  annotations   Json?     @default("[]")
+  uploadDate    DateTime  @default(now())
+  uploadedById  String
+  uploadedBy    User      @relation("UploadedVideos", fields: [uploadedById], references: [id])
+  isPrivate     Boolean   @default(true)
+  views         Int       @default(0)
+  createdAt     DateTime  @default(now())
+
+  @@index([playerId])
+  @@index([uploadedById])
+}
+
+model TrainingProgram {
+  id              String    @id @default(cuid())
+  name            String
+  description     String?
+  ageGroup        String?
+  duration        String?
+  price           Float?
+  maxParticipants Int?
+  schedule        Json?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model CalendarEvent {
+  id                String    @id @default(cuid())
+  title             String
+  description       String?
+  eventType         EventType
+  startTime         DateTime
+  endTime           DateTime
+  location          String?
+  maxParticipants   Int?
+  currentParticipants Int     @default(0)
+  recurringRule     String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  registrations     EventRegistration[]
+}
+
+enum EventType {
+  TRAINING
+  TOURNAMENT
+  SHOWCASE
+  ACADEMY
+  OTHER
+}
+
+model EventRegistration {
+  id               String    @id @default(cuid())
+  eventId          String
+  event            CalendarEvent @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  playerId         String
+  player           User      @relation(fields: [playerId], references: [id], onDelete: Cascade)
+  registrationDate DateTime  @default(now())
+  status           RegistrationStatus @default(CONFIRMED)
+
+  @@unique([eventId, playerId])
+  @@index([eventId])
+  @@index([playerId])
+}
+
+enum RegistrationStatus {
+  CONFIRMED
+  CANCELLED
+  WAITLIST
+}
+
+model Product {
+  id          String    @id @default(cuid())
+  name        String
+  description String?
+  price       Float
+  category    String?
+  imageUrls   String[]
+  inventory   Int       @default(0)
+  sizes       String[]
+  colors      String[]
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  orderItems  OrderItem[]
+}
+
+model Order {
+  id                  String    @id @default(cuid())
+  userId              String?
+  user                User?     @relation(fields: [userId], references: [id])
+  orderNumber         String    @unique
+  totalAmount         Float
+  status              OrderStatus @default(PENDING)
+  shippingAddress     Json?
+  stripePaymentIntentId String?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  items               OrderItem[]
+}
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+model OrderItem {
+  id          String    @id @default(cuid())
+  orderId     String
+  order       Order     @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId   String
+  product     Product   @relation(fields: [productId], references: [id])
+  quantity    Int
+  price       Float
+  size        String?
+  color       String?
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model MediaGallery {
+  id            String    @id @default(cuid())
+  title         String?
+  description   String?
+  mediaType     MediaType
+  mediaUrl      String
+  thumbnailUrl  String?
+  category      String?
+  tags          String[]
+  uploadedById  String
+  uploadedBy    User      @relation(fields: [uploadedById], references: [id])
+  isPublic      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+
+  @@index([uploadedById])
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+}
+
+model PlayerProgress {
+  id          String    @id @default(cuid())
+  playerId    String
+  player      User      @relation(fields: [playerId], references: [id], onDelete: Cascade)
+  date        DateTime
+  metrics     Json?
+  notes       String?
+  createdAt   DateTime  @default(now())
+
+  @@index([playerId])
+}
+
+model Notification {
+  id          String    @id @default(cuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title       String
+  message     String?
+  type        String?
+  isRead      Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+
+  @@index([userId])
+}
+
+model Booking {
+  id          String        @id @default(cuid())
+  name        String
+  email       String
+  phone       String
+  service     String
+  date        DateTime
+  time        String
+  notes       String?
+  status      BookingStatus @default(PENDING)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([email])
+  @@index([date])
+  @@index([status])
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}

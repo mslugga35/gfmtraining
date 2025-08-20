@@ -9,16 +9,39 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.31.1",
+    "@fullcalendar/core": "^6.1.19",
+    "@fullcalendar/daygrid": "^6.1.19",
+    "@fullcalendar/interaction": "^6.1.19",
+    "@fullcalendar/react": "^6.1.19",
+    "@fullcalendar/timegrid": "^6.1.19",
+    "@prisma/client": "^6.14.0",
+    "@stripe/stripe-js": "^7.8.0",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.55.0",
+    "@uploadthing/react": "^7.3.3",
+    "cookies-next": "^6.1.0",
+    "date-fns": "^4.1.0",
+    "fabric": "^6.7.1",
+    "framer-motion": "^12.23.12",
+    "gsap": "^3.12.5",
+    "lucide-react": "^0.539.0",
+    "next": "15.4.6",
+    "prisma": "^6.14.0",
     "react": "19.1.0",
+    "react-calendar": "^6.0.0",
     "react-dom": "19.1.0",
-    "next": "15.4.6"
+    "react-player": "^3.3.1",
+    "stripe": "^18.4.0",
+    "uploadthing": "^7.7.4",
+    "zustand": "^5.0.7"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
