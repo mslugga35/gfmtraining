@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { ArrowLeft, Check, Loader2, Phone, Mail, MessageSquare, Calendar, Clock, DollarSign } from 'lucide-react';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 
-export default function CompleteBooking() {
+function CompleteBookingContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   
@@ -330,5 +330,17 @@ export default function CompleteBooking() {
       </div>
       <Footer />
     </>
+  );
+}
+
+export default function CompleteBooking() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-red-600" />
+      </div>
+    }>
+      <CompleteBookingContent />
+    </Suspense>
   );
 }
