@@ -43,9 +43,9 @@ const mockVideoData = {
 };
 
 interface VideoPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default async function VideoPage({ params }: VideoPageProps) {
@@ -55,7 +55,8 @@ export default async function VideoPage({ params }: VideoPageProps) {
     redirect('/sign-in');
   }
 
-  const video = mockVideoData[params.id as keyof typeof mockVideoData];
+  const { id } = await params;
+  const video = mockVideoData[id as keyof typeof mockVideoData];
   
   if (!video) {
     return (
