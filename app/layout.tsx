@@ -4,6 +4,7 @@ import { Karla, Old_Standard_TT, Bebas_Neue, Oswald, Rajdhani, Inter } from "nex
 import "./globals.css";
 import MeshGradientBackground from "./components/premium/MeshGradientBackground";
 import LiquidCursor from "./components/premium/LiquidCursor";
+import AnimationProvider from "./components/AnimationProvider";
 
 const karla = Karla({
   variable: "--font-karla",
@@ -73,9 +74,11 @@ export default function RootLayout({
       >
         <MeshGradientBackground />
         <LiquidCursor />
-        <div className="relative z-10">
-          {children}
-        </div>
+        <AnimationProvider>
+          <div className="relative z-10">
+            {children}
+          </div>
+        </AnimationProvider>
       </body>
     </html>
   );

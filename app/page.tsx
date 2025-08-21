@@ -1,8 +1,12 @@
-import HeroSection from './components/home/HeroSection';
-import ServicesSection from './components/home/ServicesSection';
+'use client';
+
+import HeroSection from './components/HeroSection';
+import ServicesSection from './components/ServicesSection';
+import TestimonialsSection from './components/TestimonialsSection';
 import MediaGrid from './components/gallery/MediaGrid';
 import VideoHighlights from './components/gallery/VideoHighlights';
 import ContactSection from './components/home/ContactSection';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 export default function Home() {
   return (
@@ -10,8 +14,10 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <VideoHighlights />
+      <TestimonialsSection />
       <MediaGrid />
       <ContactSection />
+      <FloatingWhatsApp />
     </div>
   );
 }
