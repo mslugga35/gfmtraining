@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Karla, Old_Standard_TT, Bebas_Neue, Oswald, Rajdhani, Inter } from "next/font/google";
+import { Karla, Old_Standard_TT, Bebas_Neue, Oswald, Rajdhani, Inter, Orbitron } from "next/font/google";
 // import { ClerkProvider } from '@clerk/nextjs';  // Temporarily disabled until API keys are added
 import "./globals.css";
-import MeshGradientBackground from "./components/premium/MeshGradientBackground";
-import LiquidCursor from "./components/premium/LiquidCursor";
+import EliteNavigation from "./components/EliteNavigation";
 import AnimationProvider from "./components/AnimationProvider";
 
 const karla = Karla({
@@ -42,9 +41,15 @@ const inter = Inter({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 });
 
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  subsets: ["latin"],
+  weight: ['400', '700', '900']
+});
+
 export const metadata: Metadata = {
-  title: "GFM Training Academy - Elite Baseball Training",
-  description: "Professional Baseball & Softball Training Academy - Central Florida / South Atlanta",
+  title: "GFM Training - ELITE Sports Academy | Championship Training",
+  description: "🔥 ELITE Sports Academy where CHAMPIONS are forged. Professional Baseball & Softball Training with cutting-edge methods. Join 500+ Elite Athletes who trust GFM Training.",
   icons: {
     icon: '/gfm_logo.webp',
     shortcut: '/gfm_logo.webp',
@@ -68,14 +73,12 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${karla.variable} ${oldStandardTT.variable} ${bebasNeue.variable} ${oswald.variable} ${rajdhani.variable} ${inter.variable} antialiased min-h-screen body-font`}
-        style={{ backgroundColor: '#f5f5f5', color: 'rgb(0, 0, 0)' }}
+        className={`${karla.variable} ${oldStandardTT.variable} ${bebasNeue.variable} ${oswald.variable} ${rajdhani.variable} ${inter.variable} ${orbitron.variable} antialiased min-h-screen body-font`}
         suppressHydrationWarning
       >
-        <MeshGradientBackground />
-        <LiquidCursor />
         <AnimationProvider>
-          <div className="relative z-10">
+          <EliteNavigation />
+          <div className="relative">
             {children}
           </div>
         </AnimationProvider>

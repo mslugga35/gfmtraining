@@ -1,7 +1,9 @@
 'use client';
 
-import HeroSectionV2 from './components/HeroSectionV2';
-import ServicesSectionV2 from './components/ServicesSectionV2';
+import PremiumNav from './components/PremiumNav';
+import PremiumHero from './components/PremiumHero';
+import PremiumServices from './components/PremiumServices';
+import EliteStatsSection from './components/EliteStatsSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import MediaGrid from './components/gallery/MediaGrid';
 import VideoHighlights from './components/gallery/VideoHighlights';
@@ -11,8 +13,10 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <HeroSectionV2 />
-      <ServicesSectionV2 />
+      <PremiumNav />
+      <PremiumHero />
+      <PremiumServices />
+      <EliteStatsSection />
       <VideoHighlights />
       <TestimonialsSection />
       <MediaGrid />
