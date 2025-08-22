@@ -1,0 +1,4 @@
+DEPLOYMENT TEST
+Updated: 2025-08-22 02:51 UTC
+If you can see this file, Vercel is deploying correctly.
+Check: https://gfmtraining.com/test-update.txt
