@@ -19,19 +19,19 @@ export default function Home() {
                 <span className="text-red-500"> TRAINING</span>
               </div>
             </div>
-            <div className="flex items-center gap-8">
-              <a href="#services" className="font-semibold text-white hover:text-red-500 transition-colors">
+            <div className="flex items-center gap-12">
+              <a href="#services" className="font-semibold text-white hover:text-red-500 transition-colors text-lg">
                 Programs
               </a>
-              <a href="#gallery" className="font-semibold text-white hover:text-red-500 transition-colors">
+              <a href="#gallery" className="font-semibold text-white hover:text-red-500 transition-colors text-lg">
                 Gallery
               </a>
-              <a href="#contact" className="font-semibold text-white hover:text-red-500 transition-colors">
+              <a href="#contact" className="font-semibold text-white hover:text-red-500 transition-colors text-lg">
                 Contact
               </a>
               <a 
                 href="/booking" 
-                className="px-6 py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-red-500/25"
+                className="px-8 py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-red-500/25 text-lg"
               >
                 Book Session
               </a>

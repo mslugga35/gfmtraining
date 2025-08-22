@@ -46,10 +46,17 @@ export default function ImprovedHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-8"
+          className="mb-12"
         >
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-4 tracking-tight">
-            TRUST YOUR{' '}
+          <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-wider leading-tight">
+            <span 
+              className="block mb-6 text-white" 
+              style={{
+                textShadow: '3px 3px 12px rgba(0,0,0,0.8), 1px 1px 4px rgba(0,0,0,0.6)'
+              }}
+            >
+              TRUST YOUR
+            </span>
             <span 
               className="font-black block" 
               style={{
@@ -69,9 +76,9 @@ export default function ImprovedHero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-12"
         >
-          <p className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto leading-relaxed font-light">
-            Elite Baseball & Softball Training Academy where CHAMPIONS are forged. 
-            Professional training with cutting-edge methods trusted by 500+ Elite Athletes.
+          <p className="text-xl md:text-2xl text-gray-100 max-w-4xl mx-auto leading-relaxed font-medium">
+            At GFM Training Academy our mission is to help players of all ages reach their potential! 
+            Coach Larry Grayson is one of the top hitting instructors in the Central Florida and South Atlanta, Georgia areas.
           </p>
         </motion.div>
 
@@ -80,22 +87,22 @@ export default function ImprovedHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-8 justify-center items-center"
         >
           <motion.a
             href="/booking"
             whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(220,38,38,0.4)' }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 bg-red-600 text-white font-bold text-lg rounded-xl hover:bg-red-700 transition-all duration-300 shadow-2xl border border-red-500/50"
+            className="px-12 py-5 bg-red-600 text-white font-bold text-xl rounded-xl hover:bg-red-700 transition-all duration-300 shadow-2xl border border-red-500/50"
           >
             GET STARTED
           </motion.a>
           
           <motion.a
-            href="/academy"
+            href="#services"
             whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(255,255,255,0.2)' }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 bg-white/10 text-white font-bold text-lg rounded-xl hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/30"
+            className="px-12 py-5 bg-white/10 text-white font-bold text-xl rounded-xl hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/30"
           >
             LEARN MORE
           </motion.a>
