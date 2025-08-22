@@ -76,7 +76,14 @@ export default function ProfessionalPrograms() {
         </motion.div>
 
         {/* Program Cards Grid - FORCED 2 columns layout */}
-        <div className="grid grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+        <div 
+          className="max-w-4xl mx-auto gap-4 md:gap-6"
+          style={{ 
+            display: 'grid', 
+            gridTemplateColumns: '1fr 1fr',
+            gridAutoRows: 'min-content'
+          }}
+        >
           {programs.map((program, index) => {
             const Icon = program.icon;
             return (
@@ -117,7 +124,7 @@ export default function ProfessionalPrograms() {
                 {program.featured ? (
                   <div className="flex gap-3">
                     <motion.a
-                      href="#booking"
+                      href="/florida-virtual"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       className="flex-1 text-center bg-white border-2 border-[#DC2626] text-[#DC2626] font-bold py-3 rounded-xl hover:bg-[#DC2626] hover:text-white transition-all duration-300"

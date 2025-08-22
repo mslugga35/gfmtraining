@@ -24,6 +24,12 @@ export default function Home() {
             {/* Navigation with increased spacing */}
             <div className="hidden md:flex items-center gap-12">
               <a 
+                href="/" 
+                className="font-semibold text-white hover:text-[#DC2626] transition-colors text-lg"
+              >
+                Home
+              </a>
+              <a 
                 href="#programs" 
                 className="font-semibold text-white hover:text-[#DC2626] transition-colors text-lg"
               >

@@ -4,35 +4,11 @@ import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useRef, useEffect, useState } from 'react';
 
-// Animated counter component
-function AnimatedCounter({ end, duration = 2, suffix = '' }: { end: number; duration?: number; suffix?: string }) {
-  const [count, setCount] = useState(end); // Start with the end value for SSR
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    if (isInView && !hasAnimated) {
-      setHasAnimated(true);
-      setCount(0); // Reset to 0 for animation
-      let start = 0;
-      const increment = end / (duration * 60);
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
-        }
-      }, 1000 / 60);
-      return () => clearInterval(timer);
-    }
-  }, [isInView, end, duration, hasAnimated]);
-
+// Simple display component - no animation for better reliability
+function AnimatedCounter({ end, suffix = '' }: { end: number; duration?: number; suffix?: string }) {
   return (
-    <span ref={ref}>
-      {count}{suffix}
+    <span>
+      {end}{suffix}
     </span>
   );
 }
