@@ -1,4 +1,5 @@
-DEPLOYMENT TEST
-Updated: 2025-08-22 02:51 UTC
-If you can see this file, Vercel is deploying correctly.
+DEPLOYMENT TEST - CLERK KEYS ADDED
+Updated: 2025-08-22 03:52 UTC
+Clerk environment variables have been added to Vercel.
+This should fix the production deployment.
 Check: https://gfmtraining.com/test-update.txt
