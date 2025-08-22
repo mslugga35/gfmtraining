@@ -1,7 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { fabric } from 'fabric';
+// Dynamic fabric import to avoid SSR issues
+let fabric: any = null;
+if (typeof window !== 'undefined') {
+  import('fabric').then((fabricModule) => {
+    fabric = fabricModule.fabric;
+  }).catch(() => {
+    // Fabric not available, component will handle gracefully
+  });
+}
 import { 
   Pencil, 
   Circle, 
@@ -27,7 +35,7 @@ interface Annotation {
 }
 
 interface VideoAnnotationToolsProps {
-  canvas: fabric.Canvas | null;
+  canvas: any | null; // fabric.Canvas | null
   annotationMode: string;
   onModeChange: (mode: string) => void;
   onSave: () => void;
@@ -69,7 +77,7 @@ export default function VideoAnnotationTools({
   const [startPoint, setStartPoint] = useState<{ x: number; y: number } | null>(null);
 
   useEffect(() => {
-    if (!canvas) return;
+    if (!canvas || !fabric) return;
 
     // Set up drawing mode based on annotation type
     switch (annotationMode) {

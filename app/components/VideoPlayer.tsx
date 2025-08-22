@@ -2,7 +2,15 @@
 
 import { useRef, useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
-import { fabric } from 'fabric';
+// Dynamic fabric import to avoid SSR issues
+let fabric: any = null;
+if (typeof window !== 'undefined') {
+  import('fabric').then((fabricModule) => {
+    fabric = fabricModule.fabric;
+  }).catch(() => {
+    // Fabric not available, component will handle gracefully
+  });
+}
 import { 
   Play, 
   Pause, 
@@ -65,7 +73,7 @@ export default function VideoPlayer({
 
   // Initialize Fabric.js canvas
   useEffect(() => {
-    if (canvasRef.current && !fabricCanvasRef.current) {
+    if (canvasRef.current && !fabricCanvasRef.current && fabric) {
       const canvas = new fabric.Canvas(canvasRef.current, {
         isDrawingMode: false,
         selection: false,
