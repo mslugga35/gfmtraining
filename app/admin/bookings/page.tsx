@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Calendar, Clock, Phone, Mail, Check, X, Loader2, RefreshCw } from 'lucide-react';
+import { UserButton } from '@clerk/nextjs';
 
 interface Booking {
   id: string;
@@ -87,13 +88,16 @@ export default function AdminBookings() {
         <div className="bg-gray-50 rounded-xl shadow-lg p-6">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-3xl font-bold text-black">Booking Management</h1>
-            <button
-              onClick={fetchBookings}
+            <div className="flex items-center gap-4">
+              <UserButton afterSignOutUrl="/" />
+              <button
+                onClick={fetchBookings}
               className="flex items-center gap-2 px-4 py-2 bg-white hover:bg-gray-100 rounded-lg transition-colors text-black border border-gray-300"
             >
-              <RefreshCw className="w-4 h-4" />
-              Refresh
-            </button>
+                <RefreshCw className="w-4 h-4" />
+                Refresh
+              </button>
+            </div>
           </div>
 
           {bookings.length === 0 ? (

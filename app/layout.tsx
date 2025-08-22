@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Karla, Old_Standard_TT, Bebas_Neue, Oswald, Rajdhani, Inter, Orbitron } from "next/font/google";
-// import { ClerkProvider } from '@clerk/nextjs';  // Temporarily disabled until API keys are added
+import { ClerkProvider } from '@clerk/nextjs';
 import "./globals.css";
 import EliteNavigation from "./components/EliteNavigation";
 import AnimationProvider from "./components/AnimationProvider";
@@ -76,12 +76,14 @@ export default function RootLayout({
         className={`${karla.variable} ${oldStandardTT.variable} ${bebasNeue.variable} ${oswald.variable} ${rajdhani.variable} ${inter.variable} ${orbitron.variable} antialiased min-h-screen body-font`}
         suppressHydrationWarning
       >
-        <AnimationProvider>
-          <EliteNavigation />
-          <div className="relative">
-            {children}
-          </div>
-        </AnimationProvider>
+        <ClerkProvider>
+          <AnimationProvider>
+            <EliteNavigation />
+            <div className="relative">
+              {children}
+            </div>
+          </AnimationProvider>
+        </ClerkProvider>
       </body>
     </html>
   );
