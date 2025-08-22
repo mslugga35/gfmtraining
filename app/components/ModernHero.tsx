@@ -12,7 +12,7 @@ export default function ModernHero() {
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-6">
               <span className="text-black drop-shadow-sm">TRUST YOUR</span>
               <br />
-              <span className="text-red-600 font-black drop-shadow-lg" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.1)'}}>PROCESS</span>
+              <span className="font-black" style={{color: '#DC2626', textShadow: '2px 2px 8px rgba(0,0,0,0.15)'}}>PROCESS</span>
             </h1>
             
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">

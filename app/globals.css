@@ -90,8 +90,8 @@ html {
 }
 
 body {
-  background: var(--dark-gradient);
-  color: var(--pure-white);
+  background: white;
+  color: var(--black);
   font-family: var(--font-primary);
   line-height: 1.6;
   margin: 0;
@@ -103,7 +103,7 @@ body {
   position: relative;
 }
 
-/* Animated Background Pattern */
+/* Animated Background Pattern - DISABLED
 body::before {
   content: '';
   position: fixed;
@@ -119,6 +119,7 @@ body::before {
   pointer-events: none;
   z-index: -1;
 }
+*/
 
 @keyframes backgroundPulse {
   0%, 100% { opacity: 0.5; transform: scale(1); }

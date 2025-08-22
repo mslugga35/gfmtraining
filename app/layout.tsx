@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Karla, Old_Standard_TT, Bebas_Neue, Oswald, Rajdhani, Inter, Orbitron } from "next/font/google";
 import { ClerkProvider } from '@clerk/nextjs';
 import "./globals.css";
-import EliteNavigation from "./components/EliteNavigation";
+// import EliteNavigation from "./components/EliteNavigation";
 import AnimationProvider from "./components/AnimationProvider";
 
 const karla = Karla({
@@ -78,10 +78,7 @@ export default function RootLayout({
       >
         <ClerkProvider>
           <AnimationProvider>
-            <EliteNavigation />
-            <div className="relative">
-              {children}
-            </div>
+            {children}
           </AnimationProvider>
         </ClerkProvider>
       </body>

@@ -42,7 +42,6 @@ export default function EliteSportsHero() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-500/10 rounded-full filter blur-3xl animate-pulse delay-1000" />
         
         {/* Grid pattern */}
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
         
         {/* Dynamic lines */}
         <svg className="absolute inset-0 w-full h-full opacity-10">
