@@ -1,0 +1,245 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: GFM
+        - generic [ref=e8]: Training Academy
+      - button [ref=e9]:
+        - img
+  - generic [ref=e11]:
+    - generic [ref=e12]:
+      - generic:
+        - img "Baseball Training"
+      - generic [ref=e13]:
+        - img "GFM Training Academy" [ref=e16]
+        - heading "TRUST YOUR PROCESS" [level=1] [ref=e18]:
+          - generic [ref=e19]: TRUST YOUR
+          - generic [ref=e20]: PROCESS
+        - paragraph [ref=e22]: At GFM Training Academy our mission is to help players of all ages reach their potential! Coach Larry Grayson is one of the top hitting instructors in the Central Florida and South Atlanta, Georgia areas.
+        - generic [ref=e23]:
+          - link "BOOK SESSION" [ref=e24] [cursor=pointer]:
+            - /url: /booking
+          - link "VIEW PROGRAMS" [ref=e25] [cursor=pointer]:
+            - /url: "#programs"
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e29]: 0+
+            - generic [ref=e30]: Elite Athletes
+          - generic [ref=e31]:
+            - generic [ref=e33]: 0+
+            - generic [ref=e34]: Years Experience
+          - generic [ref=e35]:
+            - generic [ref=e36]: 24/7
+            - generic [ref=e37]: Support
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]: 🔥
+        - paragraph [ref=e42]: NEW! Daytime Training for Florida Virtual & Homeschool Athletes
+      - link "Learn More" [ref=e43] [cursor=pointer]:
+        - /url: "#daytime-program"
+        - text: Learn More
+        - img [ref=e44] [cursor=pointer]
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - heading "TRAINING PROGRAMS" [level=2] [ref=e49]:
+          - text: TRAINING
+          - generic [ref=e50]: PROGRAMS
+        - paragraph [ref=e51]: Professional coaching programs designed to elevate your game to the next level
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - img [ref=e55]
+          - heading "Hitting Mechanics" [level=3] [ref=e59]
+          - paragraph [ref=e60]: Advanced biomechanical analysis for maximum power
+          - generic [ref=e62]: $75/session
+          - link "Book Session" [ref=e63] [cursor=pointer]:
+            - /url: /booking
+        - generic [ref=e64]:
+          - img [ref=e66]
+          - heading "Mental Performance" [level=3] [ref=e74]
+          - paragraph [ref=e75]: Elite mental conditioning and approach training
+          - generic [ref=e77]: $60/session
+          - link "Book Session" [ref=e78] [cursor=pointer]:
+            - /url: /booking
+        - generic [ref=e79]:
+          - img [ref=e81]
+          - heading "Travel Ball Prep" [level=3] [ref=e84]
+          - paragraph [ref=e85]: Competition-ready training for serious players
+          - generic [ref=e87]: $80/session
+          - link "Book Session" [ref=e88] [cursor=pointer]:
+            - /url: /booking
+        - generic [ref=e89]:
+          - img [ref=e91]
+          - heading "Team Training" [level=3] [ref=e96]
+          - paragraph [ref=e97]: Group sessions for teams and organizations
+          - generic [ref=e99]: Custom Quote
+          - link "Book Session" [ref=e100] [cursor=pointer]:
+            - /url: /booking
+        - generic [ref=e101]:
+          - img [ref=e103]
+          - heading "Speed & Agility" [level=3] [ref=e105]
+          - paragraph [ref=e106]: Sport-specific athletic performance training
+          - generic [ref=e108]: $65/session
+          - link "Book Session" [ref=e109] [cursor=pointer]:
+            - /url: /booking
+        - generic [ref=e110]:
+          - generic [ref=e112]: NEW
+          - img [ref=e114]
+          - heading "Daytime Program" [level=3] [ref=e116]
+          - paragraph [ref=e117]: Florida Virtual & Homeschool training blocks
+          - generic [ref=e119]: Special Rates
+          - generic [ref=e120]:
+            - link "Learn More" [ref=e121] [cursor=pointer]:
+              - /url: "#booking"
+            - link "Book Now" [ref=e122] [cursor=pointer]:
+              - /url: /booking
+      - paragraph [ref=e124]:
+        - generic [ref=e125]: ✓ Performance Analytics Included
+        - text: "- Data-driven progress tracking and optimization with every program"
+    - generic [ref=e127]:
+      - generic [ref=e128]:
+        - heading "SEE THE PROCESS IN ACTION" [level=2] [ref=e129]:
+          - text: SEE THE
+          - generic [ref=e130]: PROCESS
+          - text: IN ACTION
+        - paragraph [ref=e131]: Real work, real reps, real results. Take a look inside our training facility and see how champions are made.
+      - generic [ref=e132]:
+        - figure [ref=e133]:
+          - generic [ref=e134]:
+            - img "Hitting - Contact Point" [ref=e135]
+            - paragraph [ref=e137]: Hitting - Contact Point
+        - figure [ref=e138]:
+          - generic [ref=e139]:
+            - img "Load & Launch Sequence" [ref=e140]
+            - paragraph [ref=e142]: Load & Launch Sequence
+        - figure [ref=e143]:
+          - generic [ref=e144]:
+            - img "Conditioning - Sprint Work" [ref=e145]
+            - paragraph [ref=e147]: Conditioning - Sprint Work
+        - figure [ref=e148]:
+          - generic [ref=e149]:
+            - img "Arm Care & Mobility" [ref=e150]
+            - paragraph [ref=e152]: Arm Care & Mobility
+        - figure [ref=e153]:
+          - generic [ref=e154]:
+            - img "Small Group Training" [ref=e155]
+            - paragraph [ref=e157]: Small Group Training
+        - figure [ref=e158]:
+          - generic [ref=e159]:
+            - img "Facility - Cage Work" [ref=e160]
+            - paragraph [ref=e162]: Facility - Cage Work
+        - figure [ref=e163]:
+          - generic [ref=e164]:
+            - img "Fielding Mechanics" [ref=e165]
+            - paragraph [ref=e167]: Fielding Mechanics
+        - figure [ref=e168]:
+          - generic [ref=e169]:
+            - img "Game Preparation" [ref=e170]
+            - paragraph [ref=e172]: Game Preparation
+        - figure [ref=e173]:
+          - generic [ref=e174]:
+            - img "Mental Training" [ref=e175]
+            - paragraph [ref=e177]: Mental Training
+        - figure [ref=e178]:
+          - generic [ref=e179]:
+            - img "Team Development" [ref=e180]
+            - paragraph [ref=e182]: Team Development
+      - generic [ref=e183]:
+        - paragraph [ref=e184]: Ready to start your training journey?
+        - link "Schedule Your First Session" [ref=e185] [cursor=pointer]:
+          - /url: /booking
+    - generic [ref=e187]:
+      - generic [ref=e188]:
+        - heading "BOOK YOUR SESSION" [level=2] [ref=e189]:
+          - text: BOOK YOUR
+          - generic [ref=e190]: SESSION
+        - paragraph [ref=e191]: Fill out the form below and we'll get you scheduled within 24 hours
+      - generic [ref=e192]:
+        - generic [ref=e193]:
+          - generic [ref=e194]:
+            - generic [ref=e195]:
+              - img [ref=e196]
+              - text: Athlete / Parent Name
+            - textbox "Enter full name" [ref=e199]
+          - generic [ref=e200]:
+            - generic [ref=e201]:
+              - img [ref=e202]
+              - text: Phone Number
+            - textbox "(407) 555-0123" [ref=e204]
+        - generic [ref=e205]:
+          - generic [ref=e206]:
+            - img [ref=e207]
+            - text: Email Address (Optional)
+          - textbox "athlete@example.com" [ref=e210]
+        - generic [ref=e211]:
+          - generic [ref=e212]:
+            - generic [ref=e213]:
+              - img [ref=e214]
+              - text: Select Service
+            - combobox [ref=e217]:
+              - option "Choose a program..." [selected]
+              - option "Hitting Mechanics - $75"
+              - option "Mental Performance - $60"
+              - option "Travel Ball Prep - $80"
+              - option "Team Training - Custom"
+              - option "Speed & Agility - $65"
+              - option "Daytime Program - Special Rates"
+          - generic [ref=e218]:
+            - generic [ref=e219]:
+              - img [ref=e220]
+              - text: Preferred Date
+            - textbox [ref=e222]
+        - generic [ref=e223]:
+          - generic [ref=e224]:
+            - img [ref=e225]
+            - text: Preferred Time
+          - generic [ref=e228]:
+            - button "8:00 AM" [ref=e229]
+            - button "9:00 AM" [ref=e230]
+            - button "10:00 AM" [ref=e231]
+            - button "11:00 AM" [ref=e232]
+            - button "12:00 PM" [ref=e233]
+            - button "1:00 PM" [ref=e234]
+            - button "2:00 PM" [ref=e235]
+            - button "3:00 PM" [ref=e236]
+            - button "4:00 PM" [ref=e237]
+            - button "5:00 PM" [ref=e238]
+            - button "6:00 PM" [ref=e239]
+            - button "7:00 PM" [ref=e240]
+        - generic [ref=e241]:
+          - generic [ref=e242]:
+            - img [ref=e243]
+            - text: Additional Information
+          - textbox "Tell us about your goals, current level, or any specific needs (Private, Group, Daytime Program, etc.)" [ref=e245]
+        - button "Schedule Your First Session" [ref=e246]
+        - generic [ref=e247]:
+          - paragraph [ref=e248]: "Or contact us directly:"
+          - generic [ref=e249]:
+            - link "(407) 519-0984" [ref=e250] [cursor=pointer]:
+              - /url: tel:407-519-0984
+              - img [ref=e251] [cursor=pointer]
+              - text: (407) 519-0984
+            - link "WhatsApp" [ref=e253] [cursor=pointer]:
+              - /url: https://wa.me/14075190984
+              - img [ref=e254] [cursor=pointer]
+              - text: WhatsApp
+  - generic:
+    - button
+  - contentinfo [ref=e256]:
+    - generic [ref=e257]:
+      - generic [ref=e258]:
+        - generic [ref=e259]:
+          - generic [ref=e260]: GFM
+          - generic [ref=e261]: TRAINING
+        - generic [ref=e262]:
+          - generic [ref=e263]: "Mon-Sat: 9AM-6PM"
+          - link "(407) 519-0984" [ref=e264] [cursor=pointer]:
+            - /url: tel:407-519-0984
+          - link "Contact" [ref=e265] [cursor=pointer]:
+            - /url: mailto:Larrygrayson@gfmtf.com
+          - link "Book Now" [ref=e266] [cursor=pointer]:
+            - /url: /booking
+      - paragraph [ref=e268]: © 2025 GFM Training Academy • Central Florida & South Atlanta
+```

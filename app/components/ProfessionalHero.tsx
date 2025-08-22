@@ -6,12 +6,15 @@ import { useRef, useEffect, useState } from 'react';
 
 // Animated counter component
 function AnimatedCounter({ end, duration = 2, suffix = '' }: { end: number; duration?: number; suffix?: string }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end); // Start with the end value for SSR
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true);
+      setCount(0); // Reset to 0 for animation
       let start = 0;
       const increment = end / (duration * 60);
       const timer = setInterval(() => {
@@ -25,7 +28,7 @@ function AnimatedCounter({ end, duration = 2, suffix = '' }: { end: number; dura
       }, 1000 / 60);
       return () => clearInterval(timer);
     }
-  }, [isInView, end, duration]);
+  }, [isInView, end, duration, hasAnimated]);
 
   return (
     <span ref={ref}>
