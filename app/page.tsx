@@ -1,87 +1,102 @@
 'use client';
 
-import ImprovedHero from './components/ImprovedHero';
-import ModernServices from './components/ModernServices';
-import ModernContact from './components/ModernContact';
-import MediaGrid from './components/gallery/MediaGrid';
+import ProfessionalHero from './components/ProfessionalHero';
+import ProfessionalPrograms from './components/ProfessionalPrograms';
+import ProfessionalGallery from './components/ProfessionalGallery';
+import ProfessionalBooking from './components/ProfessionalBooking';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Transparent Navigation Bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm">
+      {/* Fixed Navigation Bar with Better Spacing */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
-            <div className="flex items-center gap-3">
-              <div className="text-3xl font-black">
-                <span className="text-white">GFM</span>
-                <span className="text-red-500"> TRAINING</span>
-              </div>
+            {/* Logo with proper spacing */}
+            <div className="flex items-center gap-4">
+              <span className="text-3xl font-black text-white tracking-tight">GFM</span>
+              <span className="text-sm font-bold text-[#DC2626] uppercase tracking-wider">
+                Training Academy
+              </span>
             </div>
-            <div className="flex items-center gap-12">
-              <a href="#services" className="font-semibold text-white hover:text-red-500 transition-colors text-lg">
+            
+            {/* Navigation with increased spacing */}
+            <div className="hidden md:flex items-center gap-12">
+              <a 
+                href="#programs" 
+                className="font-semibold text-white hover:text-[#DC2626] transition-colors text-lg"
+              >
                 Programs
               </a>
-              <a href="#gallery" className="font-semibold text-white hover:text-red-500 transition-colors text-lg">
+              <a 
+                href="#gallery" 
+                className="font-semibold text-white hover:text-[#DC2626] transition-colors text-lg"
+              >
                 Gallery
               </a>
-              <a href="#contact" className="font-semibold text-white hover:text-red-500 transition-colors text-lg">
+              <a 
+                href="#booking" 
+                className="font-semibold text-white hover:text-[#DC2626] transition-colors text-lg"
+              >
                 Contact
               </a>
               <a 
                 href="/booking" 
-                className="px-8 py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-red-500/25 text-lg"
+                className="px-8 py-3 bg-[#DC2626] text-white font-bold rounded-xl hover:bg-black transition-all duration-300 shadow-lg hover:shadow-[#DC2626]/25 text-lg"
               >
                 Book Session
               </a>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button className="md:hidden text-white">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
         </div>
       </nav>
 
       {/* Main Content */}
       <div>
-        <ImprovedHero />
-        <div id="services">
-          <ModernServices />
-        </div>
-        <div id="gallery" className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6">
-            <h2 className="text-5xl font-black text-center mb-12">
-              <span className="text-black">TRAINING</span>{' '}
-              <span className="text-red-600">GALLERY</span>
-            </h2>
-            <MediaGrid />
-          </div>
-        </div>
-        <div id="contact">
-          <ModernContact />
-        </div>
+        <ProfessionalHero />
+        <ProfessionalPrograms />
+        <ProfessionalGallery />
+        <ProfessionalBooking />
       </div>
+      
       <FloatingWhatsApp />
 
-      {/* Clean Footer */}
-      <footer className="py-12 bg-black text-white">
+      {/* Simplified Clean Footer */}
+      <footer className="py-8 bg-black text-white">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <p className="text-2xl font-black mb-2">GFM TRAINING ACADEMY</p>
-              <p className="text-gray-400">Trust Your Process • Reach Your Potential</p>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            {/* Logo Badge */}
+            <div className="flex items-center gap-3">
+              <span className="text-2xl font-black">GFM</span>
+              <span className="text-[#DC2626] font-bold text-sm">TRAINING</span>
             </div>
-            <div className="flex items-center gap-6">
-              <a href="tel:407-519-0984" className="hover:text-red-500 transition-colors">
+            
+            {/* Hours & Contact */}
+            <div className="flex flex-col md:flex-row items-center gap-6 text-sm">
+              <span className="text-gray-400">Mon-Sat: 9AM-6PM</span>
+              <a href="tel:407-519-0984" className="hover:text-[#DC2626] transition-colors font-semibold">
                 (407) 519-0984
               </a>
-              <span className="text-gray-600">|</span>
-              <a href="mailto:Larrygrayson@gfmtf.com" className="hover:text-red-500 transition-colors">
-                Larrygrayson@gfmtf.com
+              <a href="mailto:Larrygrayson@gfmtf.com" className="hover:text-[#DC2626] transition-colors">
+                Contact
+              </a>
+              <a href="/booking" className="text-[#DC2626] font-bold hover:text-white transition-colors">
+                Book Now
               </a>
             </div>
           </div>
-          <div className="text-center mt-8 pt-8 border-t border-gray-800">
-            <p className="text-sm text-gray-500">
-              © 2024 GFM Training Academy. All rights reserved.
+          
+          <div className="text-center mt-6 pt-6 border-t border-gray-800">
+            <p className="text-xs text-gray-500">
+              © 2025 GFM Training Academy • Central Florida & South Atlanta
             </p>
           </div>
         </div>
