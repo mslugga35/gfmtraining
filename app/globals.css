@@ -6,6 +6,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* KILL ALL BLUE LINKS */
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
 /* ELITE SPORTS DESIGN SYSTEM */
 :root {
   /* Electric Color Palette */

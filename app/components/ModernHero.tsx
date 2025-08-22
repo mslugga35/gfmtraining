@@ -4,15 +4,15 @@ import Image from 'next/image';
 
 export default function ModernHero() {
   return (
-    <section className="min-h-screen bg-white flex items-center">
+    <section className="min-h-screen bg-gradient-to-br from-gray-50 to-white flex items-center">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-6">
-              <span className="text-black">TRUST YOUR</span>
+              <span className="text-black drop-shadow-sm">TRUST YOUR</span>
               <br />
-              <span className="text-red-600">PROCESS</span>
+              <span className="text-red-600 font-black drop-shadow-lg" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.1)'}}>PROCESS</span>
             </h1>
             
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
@@ -37,13 +37,15 @@ export default function ModernHero() {
             <div className="flex gap-4">
               <a 
                 href="/booking"
-                className="px-8 py-4 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-colors"
+                className="px-8 py-4 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-colors text-center no-underline"
+                style={{textDecoration: 'none'}}
               >
                 Start Training Today
               </a>
               <a 
                 href="#services"
-                className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-lg hover:border-red-600 hover:text-red-600 transition-colors text-center no-underline"
+                style={{textDecoration: 'none'}}
               >
                 View Programs
               </a>
@@ -66,7 +68,7 @@ export default function ModernHero() {
           {/* Right Content - Logo */}
           <div className="flex justify-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-red-600/10 blur-3xl"></div>
+              <div className="absolute inset-0 bg-red-600/20 blur-3xl rounded-full"></div>
               <Image
                 src="/gfm_logo.webp"
                 alt="GFM Training Academy"
