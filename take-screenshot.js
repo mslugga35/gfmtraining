@@ -7,8 +7,8 @@ const { chromium } = require('playwright');
   // Set viewport to capture full desktop view
   await page.setViewportSize({ width: 1920, height: 1080 });
   
-  console.log('Navigating to http://localhost:3005...');
-  await page.goto('http://localhost:3005', { waitUntil: 'networkidle' });
+  console.log('Navigating to http://localhost:3008...');
+  await page.goto('http://localhost:3008', { waitUntil: 'networkidle' });
   
   // Wait for animations to settle
   await page.waitForTimeout(3000);
