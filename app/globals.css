@@ -1229,3 +1229,30 @@ p {
   margin: 12px;
   box-shadow: 0 2px 4px -1px rgb(0 0 0 / 0.1);
 }
+
+/* Custom Animations for Elite Sports Hero */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+.animate-shine {
+  animation: shine 3s linear infinite;
+}
