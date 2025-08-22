@@ -75,8 +75,8 @@ export default function ProfessionalPrograms() {
           </p>
         </motion.div>
 
-        {/* Program Cards Grid - 2 columns max for better layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {/* Program Cards Grid - Always 2 columns for better layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {programs.map((program, index) => {
             const Icon = program.icon;
             return (
