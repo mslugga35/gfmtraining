@@ -31,11 +31,11 @@ export default function ImprovedHero() {
         >
           <div className="inline-block bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
             <Image
-              src="/gfm_logo.webp"
+              src="/gfm_logo_transparent.png"
               alt="GFM Training Academy"
-              width={200}
-              height={120}
-              className="mx-auto"
+              width={250}
+              height={150}
+              className="mx-auto drop-shadow-2xl"
               priority
             />
           </div>
