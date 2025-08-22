@@ -41,8 +41,8 @@ const programs = [
     desc: 'Sport-specific athletic performance training',
     price: '$65/session',
     icon: Zap,
-    color: 'text-orange-600',
-    bgColor: 'bg-orange-50'
+    color: 'text-[#DC2626]',
+    bgColor: 'bg-red-50'
   },
   {
     name: 'Daytime Program',
@@ -75,8 +75,8 @@ export default function ProfessionalPrograms() {
           </p>
         </motion.div>
 
-        {/* Program Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Program Cards Grid - 2 columns max for better layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {programs.map((program, index) => {
             const Icon = program.icon;
             return (
@@ -113,15 +113,36 @@ export default function ProfessionalPrograms() {
                   </span>
                 </div>
 
-                {/* Single CTA per card */}
-                <motion.a
-                  href="/booking"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="block w-full text-center bg-[#DC2626] text-white font-bold py-3 rounded-xl hover:bg-black transition-colors duration-300"
-                >
-                  Book Session
-                </motion.a>
+                {/* CTA - different for Daytime Program */}
+                {program.featured ? (
+                  <div className="flex gap-3">
+                    <motion.a
+                      href="#booking"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="flex-1 text-center bg-white border-2 border-[#DC2626] text-[#DC2626] font-bold py-3 rounded-xl hover:bg-[#DC2626] hover:text-white transition-all duration-300"
+                    >
+                      Learn More
+                    </motion.a>
+                    <motion.a
+                      href="/booking"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="flex-1 text-center bg-[#DC2626] text-white font-bold py-3 rounded-xl hover:bg-black transition-colors duration-300"
+                    >
+                      Book Now
+                    </motion.a>
+                  </div>
+                ) : (
+                  <motion.a
+                    href="/booking"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="block w-full text-center bg-[#DC2626] text-white font-bold py-3 rounded-xl hover:bg-black transition-colors duration-300"
+                  >
+                    Book Session
+                  </motion.a>
+                )}
               </motion.div>
             );
           })}

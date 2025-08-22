@@ -2,27 +2,21 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useState } from 'react';
 
 const galleryImages = [
-  { src: '/1.webp', caption: 'Hitting - Contact Point', category: 'hitting' },
-  { src: '/2.webp', caption: 'Load & Launch Sequence', category: 'hitting' },
-  { src: '/3.webp', caption: 'Conditioning - Sprint Work', category: 'conditioning' },
-  { src: '/4.webp', caption: 'Arm Care & Mobility', category: 'training' },
-  { src: '/5.webp', caption: 'Small Group Training', category: 'group' },
-  { src: '/6.webp', caption: 'Facility - Cage Work', category: 'facility' },
-  { src: '/7.webp', caption: 'Fielding Mechanics', category: 'fielding' },
-  { src: '/8.webp', caption: 'Game Preparation', category: 'game' },
-  { src: '/9.webp', caption: 'Mental Training', category: 'mental' },
-  { src: '/10.webp', caption: 'Team Development', category: 'team' }
+  { src: '/1.webp', caption: 'Hitting - Contact Point' },
+  { src: '/2.webp', caption: 'Load & Launch Sequence' },
+  { src: '/3.webp', caption: 'Conditioning - Sprint Work' },
+  { src: '/4.webp', caption: 'Arm Care & Mobility' },
+  { src: '/5.webp', caption: 'Small Group Training' },
+  { src: '/6.webp', caption: 'Facility - Cage Work' },
+  { src: '/7.webp', caption: 'Fielding Mechanics' },
+  { src: '/8.webp', caption: 'Game Preparation' },
+  { src: '/9.webp', caption: 'Mental Training' },
+  { src: '/10.webp', caption: 'Team Development' }
 ];
 
 export default function ProfessionalGallery() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-
-  const filteredImages = selectedCategory === 'all' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === selectedCategory);
 
   return (
     <section id="gallery" className="py-20 bg-gray-50">
@@ -38,26 +32,9 @@ export default function ProfessionalGallery() {
           <h2 className="text-4xl md:text-5xl font-black mb-4">
             SEE THE <span className="text-[#DC2626]">PROCESS</span> IN ACTION
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Real work, real reps, real results. Take a look inside our training facility and see how champions are made.
           </p>
-
-          {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-3">
-            {['all', 'hitting', 'fielding', 'conditioning', 'facility'].map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-[#DC2626] text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
-              </button>
-            ))}
-          </div>
         </motion.div>
 
         {/* Gallery Grid */}
@@ -65,7 +42,7 @@ export default function ProfessionalGallery() {
           layout
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         >
-          {filteredImages.map((image, index) => (
+          {galleryImages.map((image, index) => (
             <motion.figure
               key={image.src}
               layout

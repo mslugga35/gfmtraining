@@ -74,7 +74,8 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${karla.variable} ${oldStandardTT.variable} ${bebasNeue.variable} ${oswald.variable} ${rajdhani.variable} ${inter.variable} ${orbitron.variable} antialiased min-h-screen body-font`}
+        className={`${karla.variable} ${oldStandardTT.variable} ${bebasNeue.variable} ${oswald.variable} ${rajdhani.variable} ${inter.variable} ${orbitron.variable} font-sans antialiased min-h-screen`}
+        style={{ fontFamily: 'Inter, system-ui, -apple-system, sans-serif' }}
         suppressHydrationWarning
       >
         <ClerkProvider>
