@@ -1,0 +1,45 @@
+/* EMERGENCY OVERRIDE CSS - Force white background and kill blue links */
+
+/* Force white background on everything */
+html, body {
+  background: white !important;
+  background-color: white !important;
+  color: black !important;
+}
+
+/* Kill ALL blue links everywhere */
+a, a:link, a:visited, a:hover, a:active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Ensure no blue anywhere */
+* {
+  color: inherit;
+}
+
+/* Force white on main containers */
+.min-h-screen {
+  background: white !important;
+  background-color: white !important;
+}
+
+/* Disable all dark backgrounds */
+.bg-black, .bg-gray-900, .bg-dark {
+  background: white !important;
+  background-color: white !important;
+}
+
+/* Fix text colors */
+.text-white {
+  color: black !important;
+}
+
+/* Remove any background images or patterns */
+body::before,
+body::after,
+*::before,
+*::after {
+  background: none !important;
+  background-image: none !important;
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Karla, Old_Standard_TT, Bebas_Neue, Oswald, Rajdhani, Inter, Orbitron } from "next/font/google";
 import { ClerkProvider } from '@clerk/nextjs';
 import "./globals.css";
+import "./globals-override.css";
 // import EliteNavigation from "./components/EliteNavigation";
 import AnimationProvider from "./components/AnimationProvider";
 
