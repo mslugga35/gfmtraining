@@ -55,7 +55,7 @@ export default function VeloServices() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: 'Oswald, sans-serif' }}>
             TRAINING <span className="text-[#DC2626]">PROGRAMS</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -63,8 +63,8 @@ export default function VeloServices() {
           </p>
         </motion.div>
 
-        {/* Services Grid - Forced 2 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {/* Services Grid - ALWAYS 2 columns */}
+        <div className="grid grid-cols-2 gap-4 lg:gap-6 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.title}

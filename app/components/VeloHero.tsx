@@ -39,16 +39,31 @@ export default function VeloHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* Logo */}
+          <div className="mb-8">
+            <div className="inline-block bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              <Image
+                src="/gfm_logo_transparent.png"
+                alt="GFM Training Academy"
+                width={200}
+                height={120}
+                className="mx-auto"
+                priority
+              />
+            </div>
+          </div>
+
           {/* Main Headline */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight" 
+              style={{ fontFamily: 'Oswald, sans-serif' }}>
             TRUST YOUR
-            <span className="block text-[#DC2626]">PROCESS</span>
+            <span className="block text-[#DC2626] drop-shadow-lg">PROCESS</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10 font-light">
-            Elite baseball training in Central Florida & South Atlanta. 
-            Transform your game with Coach Larry Grayson.
+          <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10">
+            At GFM Training Academy our mission is to help players of all ages reach their potential! 
+            Coach Larry Grayson is one of the top hitting instructors in Central Florida and South Atlanta.
           </p>
 
           {/* CTA Buttons */}

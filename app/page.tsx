@@ -40,7 +40,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="font-display text-4xl md:text-5xl font-black mb-4">
+              <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: 'Oswald, sans-serif' }}>
                 SEE THE <span className="text-[#DC2626]">PROCESS</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -90,7 +90,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="font-display text-4xl md:text-5xl font-black mb-4">
+              <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: 'Oswald, sans-serif' }}>
                 BOOK YOUR <span className="text-[#DC2626]">SESSION</span>
               </h2>
               <p className="text-xl text-gray-600">
@@ -139,7 +139,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-display text-4xl md:text-5xl font-black mb-6">
+              <h2 className="text-4xl md:text-5xl font-black mb-6" style={{ fontFamily: 'Oswald, sans-serif' }}>
                 READY TO <span className="text-[#DC2626]">ELEVATE</span> YOUR GAME?
               </h2>
               <p className="text-xl mb-10 max-w-2xl mx-auto text-gray-300">
