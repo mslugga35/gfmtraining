@@ -39,18 +39,16 @@ export default function VeloHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Logo */}
-          <div className="mb-8">
-            <div className="inline-block bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-              <Image
-                src="/gfm_logo_transparent.png"
-                alt="GFM Training Academy"
-                width={200}
-                height={120}
-                className="mx-auto"
-                priority
-              />
-            </div>
+          {/* Logo - Bigger, No Box Background */}
+          <div className="mb-12">
+            <Image
+              src="/gfm_logo_transparent.png"
+              alt="GFM Training Academy"
+              width={350}
+              height={210}
+              className="mx-auto drop-shadow-2xl"
+              priority
+            />
           </div>
 
           {/* Main Headline */}

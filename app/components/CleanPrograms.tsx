@@ -14,25 +14,25 @@ const programs = [
     title: 'Mental Performance',
     desc: 'Elite mental conditioning and approach training',
     price: '$60/session',
-    color: 'border-blue-200 hover:border-blue-500'
+    color: 'border-gray-200 hover:border-black'
   },
   {
     title: 'Travel Ball Prep',
     desc: 'Competition-ready training for serious players',
     price: '$80/session',
-    color: 'border-green-200 hover:border-green-500'
+    color: 'border-gray-200 hover:border-[#DC2626]'
   },
   {
     title: 'Team Training',
     desc: 'Group sessions for teams and organizations',
     price: 'Custom Quote',
-    color: 'border-purple-200 hover:border-purple-500'
+    color: 'border-gray-200 hover:border-black'
   },
   {
     title: 'Speed & Agility',
     desc: 'Sport-specific athletic performance training',
     price: '$65/session',
-    color: 'border-yellow-200 hover:border-yellow-500'
+    color: 'border-gray-200 hover:border-[#DC2626]'
   },
   {
     title: 'Daytime Program',

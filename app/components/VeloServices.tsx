@@ -9,38 +9,44 @@ const services = [
     icon: Target,
     title: 'Hitting Mechanics',
     desc: 'Advanced biomechanical analysis for maximum power',
-    price: '$75/session'
+    price: '$75/session',
+    iconColor: 'text-[#DC2626]'
   },
   {
     icon: Brain,
     title: 'Mental Performance',
     desc: 'Elite mental conditioning and approach training',
-    price: '$60/session'
+    price: '$60/session',
+    iconColor: 'text-black'
   },
   {
     icon: TrendingUp,
     title: 'Travel Ball Prep',
     desc: 'Competition-ready training for serious players',
-    price: '$80/session'
+    price: '$80/session',
+    iconColor: 'text-[#DC2626]'
   },
   {
     icon: Users,
     title: 'Team Training',
     desc: 'Group sessions for teams and organizations',
-    price: 'Custom Quote'
+    price: 'Custom Quote',
+    iconColor: 'text-black'
   },
   {
     icon: Zap,
     title: 'Speed & Agility',
     desc: 'Sport-specific athletic performance training',
-    price: '$65/session'
+    price: '$65/session',
+    iconColor: 'text-[#DC2626]'
   },
   {
     icon: Calendar,
     title: 'Daytime Program',
     desc: 'Florida Virtual & Homeschool training blocks',
     price: 'Special Rates',
-    featured: true
+    featured: true,
+    iconColor: 'text-[#DC2626]'
   }
 ];
 
@@ -87,7 +93,7 @@ export default function VeloServices() {
               {/* Icon */}
               <div className="mb-6">
                 <div className="w-14 h-14 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-[#DC2626] transition-colors">
-                  <service.icon className="w-7 h-7 text-[#DC2626] group-hover:text-white transition-colors" />
+                  <service.icon className={`w-7 h-7 ${service.iconColor} group-hover:text-white transition-colors`} />
                 </div>
               </div>
 
