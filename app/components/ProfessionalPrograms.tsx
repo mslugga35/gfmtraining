@@ -124,7 +124,7 @@ export default function ProfessionalPrograms() {
                 {program.featured ? (
                   <div className="flex gap-3">
                     <motion.a
-                      href="/florida-virtual"
+                      href="/daytime-program"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       className="flex-1 text-center bg-white border-2 border-[#DC2626] text-[#DC2626] font-bold py-3 rounded-xl hover:bg-[#DC2626] hover:text-white transition-all duration-300"

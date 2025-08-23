@@ -17,7 +17,7 @@ export default function Home() {
         <VeloHero />
         
         {/* Announcement Banner */}
-        <Link href="/florida-virtual">
+        <Link href="/daytime-program">
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -177,7 +177,7 @@ export default function Home() {
                 <h3 className="font-bold text-lg mb-4">Quick Links</h3>
                 <ul className="space-y-2 text-sm">
                   <li><Link href="/services" className="text-gray-400 hover:text-[#DC2626]">Services</Link></li>
-                  <li><Link href="/florida-virtual" className="text-gray-400 hover:text-[#DC2626]">Daytime Program</Link></li>
+                  <li><Link href="/daytime-program" className="text-gray-400 hover:text-[#DC2626]">Daytime Program</Link></li>
                   <li><Link href="/gallery" className="text-gray-400 hover:text-[#DC2626]">Gallery</Link></li>
                   <li><Link href="/blog" className="text-gray-400 hover:text-[#DC2626]">Blog</Link></li>
                 </ul>

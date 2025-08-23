@@ -107,7 +107,7 @@ export default function CleanPrograms() {
               {program.featured ? (
                 <div className="flex gap-3">
                   <Link
-                    href="/florida-virtual"
+                    href="/daytime-program"
                     className="flex-1 text-center py-3 border-2 border-[#DC2626] text-[#DC2626] font-bold rounded hover:bg-[#DC2626] hover:text-white transition-all"
                   >
                     Learn More

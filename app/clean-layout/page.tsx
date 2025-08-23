@@ -38,7 +38,7 @@ export default function CleanLayout() {
       <CleanHero />
       
       {/* Florida Virtual Banner */}
-      <Link href="/florida-virtual">
+      <Link href="/daytime-program">
         <div className="bg-[#DC2626] text-white py-3 text-center hover:bg-red-700 transition-colors cursor-pointer">
           <span className="font-bold">🔥 NEW!</span>
           <span className="ml-2">Daytime Training for Florida Virtual & Homeschool Athletes</span>
