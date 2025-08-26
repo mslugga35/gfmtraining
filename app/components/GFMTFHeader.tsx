@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { Menu, X, Instagram, Twitter, Facebook } from 'lucide-react';
+import { Menu, X, Instagram, Twitter, Facebook, UserCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function GFMTFHeader() {
@@ -113,6 +113,23 @@ export default function GFMTFHeader() {
             ))}
           </div>
           
+          {/* Player Portal Button */}
+          <motion.div
+            whileHover={{ scale: 1.08, y: -3 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="relative"
+          >
+            <Link 
+              href="/sign-up" 
+              className="relative overflow-hidden bg-gradient-to-r from-green-600 via-green-500 to-green-600 hover:from-green-500 hover:via-green-400 hover:to-green-500 text-white font-bold text-sm xl:text-base uppercase tracking-wide px-6 py-4 rounded-lg transition-all duration-300 shadow-lg shadow-green-600/30 hover:shadow-xl hover:shadow-green-500/40 border border-green-500/20 flex items-center gap-2"
+              onClick={handleLinkClick}
+            >
+              <UserCircle className="h-5 w-5" />
+              <span className="relative z-10">Player Portal</span>
+            </Link>
+          </motion.div>
+
           {/* Enhanced Premium Book Now Button */}
           <motion.div
             whileHover={{ scale: 1.08, y: -3 }}
@@ -261,13 +278,31 @@ export default function GFMTFHeader() {
                     ))}
                   </motion.div>
                   
-                  {/* Premium Mobile CTA */}
+                  {/* Premium Mobile CTAs */}
                   <motion.div
                     initial={{ opacity: 0, y: 40, scale: 0.9 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ delay: 1.1, duration: 0.6, ease: "easeOut" }}
-                    className="mt-auto pt-8"
+                    className="mt-auto pt-8 space-y-4"
                   >
+                    {/* Player Portal Button */}
+                    <Link 
+                      href="/sign-up" 
+                      className="group relative w-full bg-gradient-to-r from-green-600 via-green-500 to-green-600 hover:from-green-500 hover:via-green-400 hover:to-green-500 text-white font-bold text-xl uppercase tracking-wide px-8 py-6 rounded-xl transition-all duration-300 shadow-2xl shadow-green-600/40 hover:shadow-green-500/60 border border-green-500/30 overflow-hidden flex items-center justify-center gap-3"
+                      onClick={handleLinkClick}
+                    >
+                      <UserCircle className="h-6 w-6" />
+                      <span className="relative z-10">Player Portal</span>
+                      <motion.span 
+                        className="relative z-10 group-hover:translate-x-2 transition-transform duration-300"
+                        initial={{ x: 0 }}
+                        whileHover={{ x: 8 }}
+                      >
+                        →
+                      </motion.span>
+                    </Link>
+
+                    {/* Book Training Button */}
                     <Link 
                       href="/booking" 
                       className="group relative w-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 hover:from-red-500 hover:via-red-400 hover:to-red-500 text-white font-bold text-xl uppercase tracking-wide px-8 py-6 rounded-xl transition-all duration-300 shadow-2xl shadow-red-600/40 hover:shadow-red-500/60 border border-red-500/30 overflow-hidden flex items-center justify-center gap-3"
