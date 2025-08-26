@@ -16,7 +16,9 @@ import {
   Download,
   Filter,
   Search,
-  ChevronRight
+  ChevronRight,
+  Upload,
+  Plus
 } from 'lucide-react';
 import VideoCard from '../components/player/VideoCard';
 import Link from 'next/link';
@@ -203,6 +205,13 @@ export default function PlayerPortalPage() {
               <p className="text-gray-400 mt-2">Welcome back, {user?.firstName || 'Player'}</p>
             </div>
             <div className="flex items-center space-x-4">
+              <Link 
+                href="/dashboard/upload" 
+                className="flex items-center px-4 py-2 bg-green-600 hover:bg-green-500 text-white rounded-lg text-sm transition-colors"
+              >
+                <Upload className="h-4 w-4 mr-2" />
+                Upload Video
+              </Link>
               <Link 
                 href="/dashboard" 
                 className="btn btn-outline text-sm"
