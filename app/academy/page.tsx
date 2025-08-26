@@ -19,40 +19,36 @@ export default function AcademyPage() {
         <AcademyHero />
         <ProgramsSection />
         <FloridaVirtualProgramSection />
-        <TrainingSchedule />
-        <CoachingStaff />
-        <AcademyEnrollmentForm />
-        <PlayerPortalSection />
         
         {/* Simple Footer */}
-        <footer className="py-12 bg-gray-900 text-white">
+        <footer className="py-12 bg-gray-50 border-t border-gray-200">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8 mb-8">
               <div>
-                <h3 className="font-bold text-xl mb-4 text-[#DC2626]">GFM Training Academy</h3>
-                <p className="text-gray-300">
+                <h3 className="font-bold text-xl mb-4 text-red-600">GFM Training Academy</h3>
+                <p className="text-gray-600">
                   Elite baseball & softball training
                 </p>
               </div>
               
               <div>
-                <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+                <h3 className="font-bold text-lg mb-4 text-black">Quick Links</h3>
                 <ul className="space-y-2">
-                  <li><a href="/academy" className="text-gray-300 hover:text-[#DC2626]">Academy</a></li>
-                  <li><a href="/programs" className="text-gray-300 hover:text-[#DC2626]">Programs</a></li>
-                  <li><a href="/gallery" className="text-gray-300 hover:text-[#DC2626]">Gallery</a></li>
-                  <li><a href="/contact" className="text-gray-300 hover:text-[#DC2626]">Contact</a></li>
+                  <li><a href="/" className="text-gray-600 hover:text-red-600">Home</a></li>
+                  <li><a href="/services" className="text-gray-600 hover:text-red-600">Services</a></li>
+                  <li><a href="/gallery" className="text-gray-600 hover:text-red-600">Gallery</a></li>
+                  <li><a href="/contact" className="text-gray-600 hover:text-red-600">Contact</a></li>
                 </ul>
               </div>
               
               <div>
-                <h3 className="font-bold text-lg mb-4">Contact</h3>
-                <p className="text-gray-300 mb-2">📞 (407) 519-0984</p>
-                <p className="text-gray-300">📍 Sanford, FL</p>
+                <h3 className="font-bold text-lg mb-4 text-black">Contact</h3>
+                <p className="text-gray-600 mb-2">📞 (407) 519-0984</p>
+                <p className="text-gray-600">📍 Central Florida</p>
               </div>
             </div>
             
-            <div className="pt-8 border-t border-gray-800 text-center">
+            <div className="pt-8 border-t border-gray-300 text-center">
               <p className="text-gray-500">
                 © 2025 GFM Training Academy. All rights reserved.
               </p>

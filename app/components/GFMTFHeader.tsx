@@ -63,11 +63,9 @@ export default function GFMTFHeader() {
         <nav className="hidden lg:flex items-center gap-12 xl:gap-16">
           {[
             { href: '/', label: 'Home' },
-            { href: '/academy', label: 'Academy' },
-            { href: '/programs', label: 'Programs' },
-            { href: '/shop', label: 'Shop' },
+            { href: '/services', label: 'Services' },
             { href: '/gallery', label: 'Gallery' },
-            { href: '/player-portal', label: 'Player Portal' },
+            { href: '/academy', label: 'Academy' },
             { href: '/contact', label: 'Contact' }
           ].map((link) => (
             <motion.div
@@ -199,11 +197,9 @@ export default function GFMTFHeader() {
                 <div className="flex flex-col gap-8 flex-1">
                   {[
                     { href: '/', label: 'Home', icon: '🏠' },
-                    { href: '/academy', label: 'Academy', icon: '🎯' },
-                    { href: '/programs', label: 'Programs', icon: '💪' },
-                    { href: '/shop', label: 'Shop', icon: '🛍️' },
+                    { href: '/services', label: 'Services', icon: '💪' },
                     { href: '/gallery', label: 'Gallery', icon: '📸' },
-                    { href: '/player-portal', label: 'Player Portal', icon: '👤' },
+                    { href: '/academy', label: 'Academy', icon: '🎯' },
                     { href: '/contact', label: 'Contact', icon: '📞' }
                   ].map((link, index) => (
                     <motion.div
