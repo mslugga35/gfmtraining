@@ -240,6 +240,7 @@ Please confirm availability and next steps!`;
                     onChange={handleChange}
                     required
                     min={new Date().toISOString().split('T')[0]}
+                    max={new Date(Date.now() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 transition-colors text-lg"
                   />
                 </div>
