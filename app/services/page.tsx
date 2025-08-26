@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import GFMTFHeader from '../components/GFMTFHeader';
 
 interface Service {
   name: string;
@@ -76,6 +77,7 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#e5e5e5' }}>
+      <GFMTFHeader />
       {/* Logo Watermark Background */}
       <div className="fixed inset-0 flex items-center justify-center opacity-5 pointer-events-none z-0">
         <Image 
@@ -87,7 +89,7 @@ export default function ServicesPage() {
         />
       </div>
       {/* Hero Section */}
-      <section className="section-lg relative z-10">
+      <section className="section-lg relative z-10 pt-32">
         <div className="container text-center bg-white rounded-2xl p-8 shadow-lg">
           {/* Large Brand Logo */}
           <div className="flex justify-center mb-12">
