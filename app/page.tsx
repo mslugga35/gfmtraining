@@ -10,6 +10,10 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      {/* Player Portal Alert Banner */}
+      <div className="bg-green-600 text-white py-3 text-center font-bold">
+        🎯 NEW: Player Portal Available! <Link href="/sign-up" className="underline ml-2">Sign Up Here</Link> | <Link href="/player-portal" className="underline ml-2">Access Portal</Link>
+      </div>
       <GFMTFHeader />
       
       {/* Add padding-top to account for fixed header */}
