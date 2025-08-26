@@ -58,7 +58,7 @@ export default function Home() {
               className="text-center mb-12"
             >
               <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: 'Oswald, sans-serif' }}>
-                GET <span className="text-[#DC2626]">STARTED</span>
+                GET <span className="text-[#DC2626]">STARTED TODAY</span>
               </h2>
               <p className="text-xl text-gray-600">
                 Multiple ways to connect
