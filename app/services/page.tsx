@@ -89,22 +89,9 @@ export default function ServicesPage() {
         />
       </div>
       {/* Hero Section */}
-      <section className="section-lg relative z-10 pt-32">
-        <div className="container text-center bg-white rounded-2xl p-8 shadow-lg">
-          {/* Large Brand Logo */}
-          <div className="flex justify-center mb-12">
-            <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-200 transform hover:scale-105 transition-transform duration-300">
-              <Image 
-                src="/gfm_logo.webp" 
-                alt="GFM Training Academy" 
-                width={200} 
-                height={200} 
-                className="w-auto h-auto"
-                priority
-              />
-            </div>
-          </div>
-          <h1 className="mb-6">Our Training Services</h1>
+      <section className="relative z-10 pt-28 pb-8">
+        <div className="container text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Training Services</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Professional baseball training designed to help players of all ages reach their potential. 
             Each session is tailored to your specific needs and skill level.
@@ -113,28 +100,21 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="section relative z-10">
-        <div className="container bg-white rounded-2xl p-8 shadow-lg">
-          <div className="services-grid">
+      <section className="relative z-10 py-8">
+        <div className="container bg-white rounded-2xl p-6 shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((service, index) => (
-              <div key={index} className="service-card">
-                <h3 className="mb-4">{service.name}</h3>
-                <div className="price">${service.price}</div>
-                <p className="text-gray-600 mb-2">{service.description}</p>
-                <p className="text-sm text-gray-500 mb-6">{service.duration}</p>
+              <div key={index} className="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:shadow-lg transition-shadow">
+                <h3 className="text-lg font-semibold mb-2">{service.name}</h3>
+                <div className="text-2xl font-bold text-red-600 mb-2">${service.price}</div>
+                <p className="text-sm text-gray-600 mb-1">{service.description}</p>
+                <p className="text-xs text-gray-500 mb-3">{service.duration}</p>
                 <div className="space-y-2">
                   <Link 
                     href={`/booking/${getServiceSlug(service.name)}`}
-                    className="btn btn-primary w-full group"
+                    className="block w-full bg-red-600 hover:bg-red-700 text-white text-center py-2 px-4 rounded-lg text-sm font-medium transition-colors"
                   >
-                    Book with Calendar
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                  <Link 
-                    href={`/booking?service=${encodeURIComponent(service.name)}&price=${service.price}`}
-                    className="btn btn-secondary w-full text-sm"
-                  >
-                    Quick Form Booking
+                    Book Now
                   </Link>
                 </div>
               </div>
@@ -144,54 +124,50 @@ export default function ServicesPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="section relative z-10">
-        <div className="container bg-white rounded-2xl p-8 shadow-lg">
-          <div className="text-center mb-12">
-            <h2 className="mb-6">Why Choose GFM Training Academy?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our mission is to help players of all ages reach their potential through personalized, 
-              professional training.
-            </p>
+      <section className="relative z-10 py-8">
+        <div className="container bg-white rounded-2xl p-6 shadow-lg">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-bold mb-3">Why Choose GFM Training Academy?</h2>
           </div>
           
-          <div className="grid grid-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-red-600">1</span>
+              <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-xl font-bold text-red-600">1</span>
               </div>
-              <h3 className="mb-3">Expert Coaching</h3>
-              <p className="text-gray-600">Professional instruction from experienced coaches who understand the game.</p>
+              <h3 className="font-semibold mb-2">Expert Coaching</h3>
+              <p className="text-sm text-gray-600">Professional instruction from experienced coaches.</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-red-600">2</span>
+              <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-xl font-bold text-red-600">2</span>
               </div>
-              <h3 className="mb-3">Personalized Training</h3>
-              <p className="text-gray-600">Each session is tailored to your specific needs and skill level.</p>
+              <h3 className="font-semibold mb-2">Personalized Training</h3>
+              <p className="text-sm text-gray-600">Sessions tailored to your specific needs.</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-red-600">3</span>
+              <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <span className="text-xl font-bold text-red-600">3</span>
               </div>
-              <h3 className="mb-3">Proven Results</h3>
-              <p className="text-gray-600">Our training methods have helped countless players improve their game.</p>
+              <h3 className="font-semibold mb-2">Proven Results</h3>
+              <p className="text-sm text-gray-600">Methods that help players improve their game.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="section relative z-10">
-        <div className="container bg-white rounded-2xl p-8 shadow-lg text-center">
-          <h2 className="mb-6">Ready to Start Training?</h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Take the first step towards improving your baseball skills. Book your training session today.
+      <section className="relative z-10 py-8 pb-12">
+        <div className="container bg-red-50 rounded-2xl p-6 shadow-lg text-center">
+          <h2 className="text-2xl font-bold mb-3">Ready to Start Training?</h2>
+          <p className="text-gray-600 mb-4">
+            Take the first step towards improving your baseball skills.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/booking" className="btn btn-primary">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/booking" className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg font-medium transition-colors">
               Book a Session
             </Link>
-            <Link href="/contact" className="btn btn-secondary">
+            <Link href="/contact" className="border border-red-600 text-red-600 hover:bg-red-50 px-6 py-2 rounded-lg font-medium transition-colors">
               Contact Us
             </Link>
           </div>
