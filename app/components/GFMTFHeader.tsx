@@ -291,7 +291,7 @@ export default function GFMTFHeader() {
                       className="group relative w-full bg-gradient-to-r from-green-600 via-green-500 to-green-600 hover:from-green-500 hover:via-green-400 hover:to-green-500 text-white font-bold text-xl uppercase tracking-wide px-8 py-6 rounded-xl transition-all duration-300 shadow-2xl shadow-green-600/40 hover:shadow-green-500/60 border border-green-500/30 overflow-hidden flex items-center justify-center gap-3"
                       onClick={handleLinkClick}
                     >
-                      <UserCircle className="h-6 w-6" />
+                      <UserCircle className="h-6 w-6 flex-shrink-0" />
                       <span className="relative z-10">Player Portal</span>
                       <motion.span 
                         className="relative z-10 group-hover:translate-x-2 transition-transform duration-300"
