@@ -18,6 +18,35 @@ export default function Home() {
         
         <GFMTFPrograms />
 
+        {/* Player Portal Section */}
+        <section className="py-16 bg-gradient-to-r from-green-600 to-green-700">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
+              PLAYER PORTAL
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Upload videos for coach review • View personalized feedback • Track your progress
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/sign-up"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-green-600 font-bold text-lg rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Sign Up / Sign In
+              </Link>
+              <Link
+                href="/player-portal"
+                className="inline-flex items-center justify-center px-8 py-4 bg-green-800 text-white font-bold text-lg rounded-lg hover:bg-green-900 transition-colors"
+              >
+                Go to Player Portal
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* Contact Section */}
         <section className="py-20 bg-white">
