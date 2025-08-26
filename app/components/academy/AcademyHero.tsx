@@ -57,8 +57,8 @@ const AcademyHero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="inline-block gfmtf-button px-4 py-2 text-sm font-semibold body-font"
-                style={{ backgroundColor: 'rgba(16, 185, 129, 0.2)', color: '#10b981' }}
+                className="inline-block gfmtf-button px-4 py-2 text-sm font-semibold"
+                style={{ backgroundColor: 'rgba(220, 38, 38, 0.2)', color: '#DC2626', fontFamily: 'Oswald, sans-serif' }}
               >
                 Elite Training Academy
               </motion.div>
@@ -67,22 +67,22 @@ const AcademyHero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight heading-font"
-                style={{ color: 'rgb(247, 247, 247)' }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                style={{ color: 'rgb(247, 247, 247)', fontFamily: 'Oswald, sans-serif' }}
               >
-                Develop Your
-                <span style={{ color: '#10b981' }}> Elite</span> Skills
+                GFMTF <span style={{ color: '#DC2626' }}>Academy</span>
               </motion.h1>
               
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-xl leading-relaxed max-w-lg body-font"
-                style={{ color: 'rgb(127, 128, 128)' }}
+                className="text-xl leading-relaxed max-w-lg"
+                style={{ color: 'rgb(127, 128, 128)', fontFamily: 'Inter, sans-serif' }}
               >
-                Our comprehensive baseball academy offers year-round training programs 
-                designed to develop complete players from fundamentals to advanced techniques.
+                Elite baseball development through personalized training, cutting-edge technology, 
+                and comprehensive programs designed for players at every level. From fundamentals 
+                to college prep and showcase preparation.
               </motion.p>
             </div>
 
@@ -94,28 +94,28 @@ const AcademyHero = () => {
               className="grid grid-cols-2 gap-4"
             >
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(16, 185, 129, 0.2)' }}>
-                  <Target className="w-5 h-5" style={{ color: '#10b981' }} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(220, 38, 38, 0.2)' }}>
+                  <Target className="w-5 h-5" style={{ color: '#DC2626' }} />
                 </div>
-                <span className="body-font" style={{ color: 'rgb(127, 128, 128)' }}>Precision Training</span>
+                <span style={{ color: 'rgb(127, 128, 128)', fontFamily: 'Inter, sans-serif' }}>Precision Training</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(16, 185, 129, 0.2)' }}>
-                  <Users className="w-5 h-5" style={{ color: '#10b981' }} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(220, 38, 38, 0.2)' }}>
+                  <Users className="w-5 h-5" style={{ color: '#DC2626' }} />
                 </div>
-                <span className="body-font" style={{ color: 'rgb(127, 128, 128)' }}>Expert Coaches</span>
+                <span style={{ color: 'rgb(127, 128, 128)', fontFamily: 'Inter, sans-serif' }}>Expert Coaches</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(16, 185, 129, 0.2)' }}>
-                  <Trophy className="w-5 h-5" style={{ color: '#10b981' }} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(220, 38, 38, 0.2)' }}>
+                  <Trophy className="w-5 h-5" style={{ color: '#DC2626' }} />
                 </div>
-                <span className="body-font" style={{ color: 'rgb(127, 128, 128)' }}>Proven Results</span>
+                <span style={{ color: 'rgb(127, 128, 128)', fontFamily: 'Inter, sans-serif' }}>Proven Results</span>
               </div>
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(16, 185, 129, 0.2)' }}>
-                  <Calendar className="w-5 h-5" style={{ color: '#10b981' }} />
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'rgba(220, 38, 38, 0.2)' }}>
+                  <Calendar className="w-5 h-5" style={{ color: '#DC2626' }} />
                 </div>
-                <span className="body-font" style={{ color: 'rgb(127, 128, 128)' }}>Flexible Schedule</span>
+                <span style={{ color: 'rgb(127, 128, 128)', fontFamily: 'Inter, sans-serif' }}>Flexible Schedule</span>
               </div>
             </motion.div>
 
@@ -126,17 +126,19 @@ const AcademyHero = () => {
               transition={{ duration: 0.8, delay: 1.0 }}
               className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
             >
-              <button className="gfmtf-button px-8 py-4 font-semibold text-lg transition-colors body-font" style={{
-                backgroundColor: '#10b981',
+              <button className="gfmtf-button px-8 py-4 font-semibold text-lg transition-colors rounded-lg" style={{
+                backgroundColor: '#DC2626',
                 color: 'rgb(247, 247, 247)',
-                border: '2px solid #10b981'
+                border: '2px solid #DC2626',
+                fontFamily: 'Oswald, sans-serif'
               }}>
                 Enroll Now
               </button>
-              <button className="gfmtf-button px-8 py-4 font-semibold text-lg transition-colors body-font" style={{
+              <button className="gfmtf-button px-8 py-4 font-semibold text-lg transition-colors rounded-lg" style={{
                 backgroundColor: 'transparent',
                 color: 'rgb(247, 247, 247)',
-                border: '2px solid rgb(247, 247, 247)'
+                border: '2px solid rgb(247, 247, 247)',
+                fontFamily: 'Oswald, sans-serif'
               }}>
                 Schedule Tour
               </button>
@@ -159,19 +161,19 @@ const AcademyHero = () => {
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="body-font" style={{ color: 'rgb(127, 128, 128)' }}>Elite Development</span>
-                  <span className="font-semibold body-font" style={{ color: '#10b981' }}>All Levels</span>
+                  <span className="font-semibold" style={{ color: '#DC2626', fontFamily: 'Inter, sans-serif' }}>All Levels</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="body-font" style={{ color: 'rgb(127, 128, 128)' }}>High School Prep</span>
-                  <span className="font-semibold body-font" style={{ color: '#10b981' }}>Ages 14-17</span>
+                  <span className="font-semibold" style={{ color: '#DC2626', fontFamily: 'Inter, sans-serif' }}>Ages 14-17</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="body-font" style={{ color: 'rgb(127, 128, 128)' }}>Elite Performance</span>
-                  <span className="font-semibold body-font" style={{ color: '#10b981' }}>Ages 16+</span>
+                  <span className="font-semibold" style={{ color: '#DC2626', fontFamily: 'Inter, sans-serif' }}>Ages 16+</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="body-font" style={{ color: 'rgb(127, 128, 128)' }}>Private Coaching</span>
-                  <span className="font-semibold body-font" style={{ color: '#10b981' }}>All Ages</span>
+                  <span className="font-semibold" style={{ color: '#DC2626', fontFamily: 'Inter, sans-serif' }}>All Ages</span>
                 </div>
               </div>
             </div>
@@ -184,19 +186,19 @@ const AcademyHero = () => {
               <h3 className="text-xl font-semibold mb-4 heading-font" style={{ color: 'rgb(247, 247, 247)' }}>Training Focus</h3>
               <div className="grid grid-cols-2 gap-3">
                 <div className="text-center">
-                  <div className="text-2xl font-bold heading-font" style={{ color: '#10b981' }}>Hitting</div>
+                  <div className="text-2xl font-bold" style={{ color: '#DC2626', fontFamily: 'Oswald, sans-serif' }}>Hitting</div>
                   <div className="text-sm body-font" style={{ color: 'rgb(127, 128, 128)' }}>Mechanics & Power</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold heading-font" style={{ color: '#10b981' }}>Pitching</div>
+                  <div className="text-2xl font-bold" style={{ color: '#DC2626', fontFamily: 'Oswald, sans-serif' }}>Pitching</div>
                   <div className="text-sm body-font" style={{ color: 'rgb(127, 128, 128)' }}>Velocity & Control</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold heading-font" style={{ color: '#10b981' }}>Fielding</div>
+                  <div className="text-2xl font-bold" style={{ color: '#DC2626', fontFamily: 'Oswald, sans-serif' }}>Fielding</div>
                   <div className="text-sm body-font" style={{ color: 'rgb(127, 128, 128)' }}>Defense & Agility</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold heading-font" style={{ color: '#10b981' }}>Mental</div>
+                  <div className="text-2xl font-bold" style={{ color: '#DC2626', fontFamily: 'Oswald, sans-serif' }}>Mental</div>
                   <div className="text-sm body-font" style={{ color: 'rgb(127, 128, 128)' }}>Game Strategy</div>
                 </div>
               </div>

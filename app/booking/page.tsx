@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, Clock, DollarSign, User, Phone, Mail, MessageSquare, Check, Loader2 } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, User, Phone, Mail, MessageSquare, Check, Loader2, Users, CalendarDays } from 'lucide-react';
 import CalendlyWidget from '../components/CalendlyWidget';
 
 const services = [
@@ -56,7 +56,6 @@ export default function BookingPage() {
     const message = `🏆 NEW TRAINING BOOKING REQUEST 🏆
 
 📋 SERVICE: ${formData.service}
-💰 PRICE: $${formData.price}
 
 📅 PREFERRED DATE: ${formData.date}
 ⏰ PREFERRED TIME: ${formData.time}
@@ -134,37 +133,37 @@ Please confirm availability and next steps!`;
 
   if (bookingSuccess) {
     return (
-      <div className="min-h-screen bg-white">
-        <section className="section">
-          <div className="container max-w-2xl">
-            <div className="bg-green-50 border-2 border-green-500 rounded-2xl p-8 text-center">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Check className="w-10 h-10 text-green-600" />
+      <div className="min-h-screen bg-white pt-24">
+        <section className="py-20">
+          <div className="container mx-auto px-4 max-w-2xl">
+            <div className="bg-green-50 border-2 border-green-500 rounded-2xl p-12 text-center">
+              <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-8">
+                <Check className="w-12 h-12 text-green-600" />
               </div>
-              <h1 className="text-3xl font-bold mb-4">Booking Request Submitted!</h1>
-              <p className="text-lg text-gray-700 mb-6">
+              <h1 className="text-4xl font-bold mb-6">Booking Request Submitted!</h1>
+              <p className="text-xl text-gray-700 mb-8">
                 Thank you for booking with GFM Training Academy. We've received your request and will contact you within 24 hours to confirm your appointment.
               </p>
-              <div className="bg-white rounded-lg p-6 mb-6 text-left max-w-md mx-auto">
-                <h3 className="font-semibold mb-3">Booking Details:</h3>
-                <div className="space-y-2 text-sm">
-                  <p><strong>Service:</strong> {formData.service}</p>
-                  <p><strong>Date:</strong> {formData.date}</p>
-                  <p><strong>Time:</strong> {formData.time}</p>
-                  <p><strong>Player:</strong> {formData.playerName}</p>
-                  <p><strong>Contact:</strong> {formData.phone}</p>
+              <div className="bg-white rounded-xl p-8 mb-8 text-left max-w-md mx-auto shadow-sm">
+                <h3 className="font-bold text-lg mb-4">Booking Details:</h3>
+                <div className="space-y-3">
+                  <p className="flex justify-between"><span className="text-gray-600">Service:</span> <span className="font-semibold">{formData.service}</span></p>
+                  <p className="flex justify-between"><span className="text-gray-600">Date:</span> <span className="font-semibold">{formData.date}</span></p>
+                  <p className="flex justify-between"><span className="text-gray-600">Time:</span> <span className="font-semibold">{formData.time}</span></p>
+                  <p className="flex justify-between"><span className="text-gray-600">Player:</span> <span className="font-semibold">{formData.playerName}</span></p>
+                  <p className="flex justify-between"><span className="text-gray-600">Contact:</span> <span className="font-semibold">{formData.phone}</span></p>
                 </div>
               </div>
-              <div className="space-y-3">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={() => router.push('/')}
-                  className="btn btn-primary"
+                  className="px-8 py-4 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-colors"
                 >
                   Return to Homepage
                 </button>
                 <button
                   onClick={() => window.location.reload()}
-                  className="btn btn-secondary ml-3"
+                  className="px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   Book Another Session
                 </button>
@@ -177,297 +176,289 @@ Please confirm availability and next steps!`;
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50 pt-24">
       {/* Header */}
-      <section className="section-sm bg-gray-50">
-        <div className="container">
+      <section className="py-10 bg-white border-b">
+        <div className="container mx-auto px-4 max-w-4xl">
           <Link 
-            href="/services" 
+            href="/" 
             className="inline-flex items-center gap-2 text-gray-600 hover:text-black transition-colors mb-6"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Services
+            Back to Home
           </Link>
-          <h1 className="mb-4">Book Your Training Session</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Book Your Training Session</h1>
           <p className="text-xl text-gray-600">
-            Fill out the form below to submit your booking request.
+            Schedule your elite baseball or softball training with GFM Training Academy
           </p>
         </div>
       </section>
 
       {/* Booking Form */}
-      <section className="section">
-        <div className="container max-w-2xl">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Service Selection */}
-            <div className="form-group">
-              <label className="form-label">
-                <Calendar className="w-4 h-4 inline mr-2" />
-                Training Service
-              </label>
-              <select 
-                name="service"
-                value={formData.service}
-                onChange={(e) => {
-                  setFormData(prev => ({ 
-                    ...prev, 
-                    service: e.target.value,
-                    price: getServicePrice(e.target.value).toString()
-                  }));
-                }}
-                className="form-select"
-                required
-              >
-                <option value="">Select a service...</option>
-                {services.map(service => (
-                  <option key={service} value={service}>
-                    {service} - ${getServicePrice(service)}
-                  </option>
-                ))}
-              </select>
+      <section className="py-12">
+        <div className="container mx-auto px-4 max-w-4xl">
+          {error && (
+            <div className="bg-red-50 border border-red-200 text-red-800 px-6 py-4 rounded-lg mb-8">
+              {error}
             </div>
+          )}
 
-            {/* Price Display */}
-            {formData.service && (
-              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                <div className="flex items-center gap-2 text-red-700">
-                  <DollarSign className="w-5 h-5" />
-                  <span className="font-semibold">
-                    Price: ${formData.price}
-                  </span>
+          <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            {/* Service Selection */}
+            <div className="p-8 border-b bg-gray-50">
+              <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <CalendarDays className="w-6 h-6 text-red-600" />
+                Training Details
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Training Service *
+                  </label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 transition-colors text-lg"
+                  >
+                    <option value="">Select a service...</option>
+                    {services.map(service => (
+                      <option key={service} value={service}>{service}</option>
+                    ))}
+                  </select>
                 </div>
-              </div>
-            )}
 
-            {/* Date & Time */}
-            <div className="grid grid-2 gap-6">
-              <div className="form-group">
-                <label className="form-label">
-                  <Calendar className="w-4 h-4 inline mr-2" />
-                  Preferred Date
-                </label>
-                <input 
-                  type="date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  className="form-input"
-                  min={new Date().toISOString().split('T')[0]}
-                  required
-                />
-              </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Preferred Date *
+                  </label>
+                  <input
+                    type="date"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleChange}
+                    required
+                    min={new Date().toISOString().split('T')[0]}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 transition-colors text-lg"
+                  />
+                </div>
 
-              <div className="form-group">
-                <label className="form-label">
-                  <Clock className="w-4 h-4 inline mr-2" />
-                  Preferred Time
-                </label>
-                <select 
-                  name="time"
-                  value={formData.time}
-                  onChange={handleChange}
-                  className="form-select"
-                  required
-                >
-                  <option value="">Select time...</option>
-                  {timeSlots.map(time => (
-                    <option key={time} value={time}>{time}</option>
-                  ))}
-                </select>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Preferred Time *
+                  </label>
+                  <select
+                    name="time"
+                    value={formData.time}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 transition-colors text-lg"
+                  >
+                    <option value="">Select time...</option>
+                    {timeSlots.map(time => (
+                      <option key={time} value={time}>{time}</option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
 
             {/* Player Information */}
-            <div className="p-6 bg-gray-50 rounded-lg space-y-6">
-              <h3 className="text-lg font-semibold flex items-center gap-2">
-                <User className="w-5 h-5" />
+            <div className="p-8 border-b">
+              <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <Users className="w-6 h-6 text-red-600" />
                 Player Information
-              </h3>
-              
-              <div className="grid grid-2 gap-6">
-                <div className="form-group">
-                  <label className="form-label">Player Name</label>
-                  <input 
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Player Name *
+                  </label>
+                  <input
                     type="text"
                     name="playerName"
                     value={formData.playerName}
                     onChange={handleChange}
-                    className="form-input"
-                    placeholder="Enter player's full name"
                     required
+                    placeholder="Enter player's full name"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 transition-colors text-lg"
                   />
                 </div>
 
-                <div className="form-group">
-                  <label className="form-label">Player Age</label>
-                  <input 
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Player Age *
+                  </label>
+                  <input
                     type="number"
                     name="playerAge"
                     value={formData.playerAge}
                     onChange={handleChange}
-                    className="form-input"
-                    placeholder="Age"
-                    min="5"
-                    max="99"
                     required
+                    min="5"
+                    max="25"
+                    placeholder="Age"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 transition-colors text-lg"
                   />
                 </div>
-              </div>
 
-              <div className="form-group">
-                <label className="form-label">Parent/Guardian Name</label>
-                <input 
-                  type="text"
-                  name="parentName"
-                  value={formData.parentName}
-                  onChange={handleChange}
-                  className="form-input"
-                  placeholder="Enter parent/guardian name"
-                  required
-                />
+                <div className="md:col-span-2">
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Parent/Guardian Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="parentName"
+                    value={formData.parentName}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter parent/guardian name"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 transition-colors text-lg"
+                  />
+                </div>
               </div>
             </div>
 
             {/* Contact Information */}
-            <div className="p-6 bg-gray-50 rounded-lg space-y-6">
-              <h3 className="text-lg font-semibold flex items-center gap-2">
-                <Phone className="w-5 h-5" />
+            <div className="p-8 border-b">
+              <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <Phone className="w-6 h-6 text-red-600" />
                 Contact Information
-              </h3>
-              
-              <div className="grid grid-2 gap-6">
-                <div className="form-group">
-                  <label className="form-label">Phone Number</label>
-                  <input 
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Phone Number *
+                  </label>
+                  <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="form-input"
-                    placeholder="(555) 123-4567"
                     required
+                    placeholder="(555) 123-4567"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 transition-colors text-lg"
                   />
                 </div>
 
-                <div className="form-group">
-                  <label className="form-label">Email Address</label>
-                  <input 
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="form-input"
-                    placeholder="your@email.com"
                     required
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 transition-colors text-lg"
                   />
                 </div>
               </div>
             </div>
 
             {/* Additional Notes */}
-            <div className="form-group">
-              <label className="form-label">
-                <MessageSquare className="w-4 h-4 inline mr-2" />
+            <div className="p-8 border-b bg-gray-50">
+              <label className="block text-sm font-semibold text-gray-700 mb-2">
                 Additional Notes (Optional)
               </label>
-              <textarea 
+              <textarea
                 name="notes"
                 value={formData.notes}
                 onChange={handleChange}
-                className="form-textarea"
-                placeholder="Any specific goals, concerns, or requests..."
                 rows={4}
+                placeholder="Any specific goals, concerns, or requests..."
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-red-500 transition-colors text-lg resize-none"
               />
             </div>
 
-            {/* Error Message */}
-            {error && (
-              <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
-                {error}
-              </div>
-            )}
-
             {/* Submit Buttons */}
-            <div className="pt-6 space-y-4">
-              <button 
-                type="submit"
-                className="btn btn-primary w-full text-lg py-4 flex items-center justify-center gap-2"
-                disabled={submitting || !formData.service || !formData.date || !formData.time || !formData.playerName || !formData.phone}
-              >
-                {submitting ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    Submitting Booking...
-                  </>
-                ) : (
-                  <>
-                    <Check className="w-5 h-5" />
-                    Submit Booking Request
-                  </>
-                )}
-              </button>
-              
-              <div className="text-center">
-                <div className="flex items-center justify-center mb-3">
-                  <div className="flex-grow h-px bg-gray-200"></div>
-                  <span className="px-4 text-sm text-gray-500">or use alternative booking methods</span>
-                  <div className="flex-grow h-px bg-gray-200"></div>
+            <div className="p-8 bg-white">
+              <div className="space-y-4">
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full py-4 bg-red-600 text-white font-bold text-lg rounded-lg hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                >
+                  {submitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <Check className="w-5 h-5" />
+                      Submit Booking Request
+                    </>
+                  )}
+                </button>
+
+                <div className="relative">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-gray-300"></div>
+                  </div>
+                  <div className="relative flex justify-center text-sm">
+                    <span className="px-4 bg-white text-gray-500">or book directly</span>
+                  </div>
                 </div>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <button
-                    type="button"
-                    onClick={handleWhatsApp}
-                    className="btn btn-secondary text-lg py-4 flex items-center justify-center gap-2"
-                    disabled={!formData.service || !formData.date || !formData.time || !formData.playerName || !formData.phone}
-                  >
-                    <MessageSquare className="w-5 h-5" />
-                    Book via WhatsApp
-                  </button>
-                  
-                  <CalendlyWidget 
-                    buttonText="Book with Calendly"
-                    className="btn btn-secondary w-full text-lg py-4"
-                  />
-                </div>
-              </div>
-              
-              <div className="bg-gray-50 rounded-lg p-4">
-                <p className="text-sm text-gray-600 text-center">
-                  <strong>Submit Booking:</strong> Saves to our system, we'll confirm within 24 hours<br/>
-                  <strong>WhatsApp:</strong> Send request directly to Coach Larry's phone<br/>
-                  <strong>Calendly:</strong> See real-time availability (if configured)
-                </p>
+
+                <button
+                  type="button"
+                  onClick={handleWhatsApp}
+                  className="w-full py-4 bg-green-600 text-white font-bold text-lg rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center gap-3"
+                >
+                  <MessageSquare className="w-5 h-5" />
+                  Book via WhatsApp
+                </button>
               </div>
             </div>
           </form>
-        </div>
-      </section>
 
-      {/* Contact Info */}
-      <section className="section-sm bg-gray-50">
-        <div className="container text-center">
-          <h3 className="mb-4">Need Help with Booking?</h3>
-          <p className="text-gray-600 mb-6">
-            Contact us directly if you have any questions or need assistance with booking.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="tel:407-519-0984" 
-              className="btn btn-secondary"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              Call 407-519-0984
-            </a>
-            <a 
-              href="https://wa.me/14075190984" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-            >
-              <MessageSquare className="w-4 h-4 mr-2" />
-              WhatsApp Us
-            </a>
+          {/* Booking Methods Info */}
+          <div className="mt-12 bg-blue-50 rounded-xl p-8">
+            <h3 className="font-bold text-xl mb-4">📋 Booking Methods Explained</h3>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex gap-3">
+                <span className="text-red-600 font-bold">•</span>
+                <div>
+                  <strong>Submit Booking:</strong> Saves to our system, we'll confirm within 24 hours
+                </div>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-green-600 font-bold">•</span>
+                <div>
+                  <strong>WhatsApp:</strong> Send request directly to Coach's phone for fastest response
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Help */}
+          <div className="mt-8 text-center p-8 bg-white rounded-xl">
+            <h3 className="font-bold text-xl mb-4">Need Help with Booking?</h3>
+            <p className="text-gray-600 mb-6">
+              Contact us directly if you have any questions or need assistance with booking.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="tel:407-519-0984"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-black text-white font-bold rounded-lg hover:bg-gray-800 transition-colors"
+              >
+                <Phone className="w-5 h-5" />
+                Call 407-519-0984
+              </a>
+              <a
+                href="https://wa.me/14075190984"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors"
+              >
+                <MessageSquare className="w-5 h-5" />
+                WhatsApp Us
+              </a>
+            </div>
           </div>
         </div>
       </section>

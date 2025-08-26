@@ -16,8 +16,79 @@ export default function Home() {
       <div className="pt-24">
         <GFMTFHero />
         
+        {/* Announcement Banner */}
+        <Link href="/academy">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="bg-[#DC2626] text-white py-4 px-6 text-center hover:bg-red-700 transition-colors cursor-pointer"
+          >
+            <span className="font-bold text-lg">🔥 NEW!</span>
+            <span className="ml-2">Daytime Training for Florida Virtual & Homeschool Athletes</span>
+            <span className="ml-4 underline">Learn More →</span>
+          </motion.div>
+        </Link>
+
         <GFMTFPrograms />
 
+        {/* Gallery Preview */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ fontFamily: 'Oswald, sans-serif' }}>
+                SEE THE <span className="text-[#DC2626]">PROCESS</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Real training, real results
+              </p>
+            </motion.div>
+
+            {/* Gallery Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto mb-8">
+              {[
+                'Training Session',
+                'Batting Practice',
+                'Pitching Mechanics',
+                'Fielding Drills',
+                'Team Workout',
+                'Elite Athletes',
+                'Facility Tour',
+                'Championship Team'
+              ].map((title, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  className="relative aspect-square rounded-lg overflow-hidden group cursor-pointer"
+                >
+                  <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-600 group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex flex-col items-center justify-center h-full text-white p-4">
+                      <div className="text-4xl mb-2">⚾</div>
+                      <div className="text-sm font-semibold text-center">{title}</div>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link
+                href="/gallery"
+                className="inline-block px-8 py-3 bg-[#DC2626] text-white font-bold rounded-lg hover:bg-black transition-colors"
+              >
+                View Full Gallery
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* Contact Section */}
         <section className="py-20 bg-white">
